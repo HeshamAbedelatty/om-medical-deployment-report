@@ -74,6 +74,16 @@ tr.hl td{background:rgba(15,157,115,.12);font-weight:700}
 .check li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:8px 0}
 .check li:before{content:"✔";color:var(--good);margin-inline-end:10px;font-weight:800}
 details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 18px}
+details.how{margin-top:18px}
+details.how summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:18px}
+details.how summary::-webkit-details-marker{display:none}
+details.how summary::after{content:"▾";font-size:22px;color:var(--teal);transition:transform .2s}
+details.how[open] summary::after{transform:rotate(180deg)}
+ol.hs{list-style:none;counter-reset:h;padding:0;margin:14px 0 0}
+ol.hs li{counter-increment:h;position:relative;padding:6px 0;padding-inline-start:46px;margin:8px 0;min-height:34px}
+ol.hs li::before{content:counter(h);position:absolute;inset-inline-start:0;top:4px;width:32px;height:32px;border-radius:50%;background:var(--soft);color:var(--teal);font-weight:800;display:grid;place-items:center}
+ol.hs li small{display:block;color:var(--mute);font-size:15px}
+.tip{background:var(--soft);border-inline-start:4px solid var(--good);padding:8px 14px;border-radius:10px;margin-top:12px;font-size:15px}
 summary{cursor:pointer;font-weight:700;color:var(--navy)}
 .note{font-size:14px;color:var(--mute)}
 footer{background:var(--navy);color:#fff;padding:32px 0;margin-top:50px}
@@ -191,11 +201,49 @@ footer .ph{background:rgba(255,255,255,.14);padding:0 8px;border-radius:6px;dire
   <div class="bar"><b>DigitalOcean</b><i style="width:240px"></i><em>24</em></div>
  </div>
  <div class="term"><b>لماذا Contabo؟</b> لأن فيديوهات المحاضرات هي أكبر ما سيستهلك المساحة، وContabo Cloud VPS 6 يعطينا 5 أضعاف مساحة Hetzner و3 أضعاف ذاكرته، مع سرعة منفذ 300 ميجابت/ث تحمل عدداً أكبر من الطلاب معاً. وإذا زاد استهلاك الفيديو لاحقاً بشكل كبير، يمكن نقل المنصة إلى Hetzner.</div>
+ <details class="how">
+  <summary>📋 خطوات شراء الخادم من Contabo (خطوة بخطوة)</summary>
+  <ol class="hs">
+   <li><b>افتح صفحة Contabo</b> من الزر الأخضر أعلاه، واختر باقة <b>Cloud VPS 6</b> ثم اضغط <b>Get Started</b>.</li>
+   <li><b>اختر مكان الخادم:</b> ألمانيا (أوروبا)، فهي الأقرب لمصر وسرعتها جيدة.</li>
+   <li><b>اختر نظام التشغيل:</b> Ubuntu (أحدث نسخة LTS متاحة).<small>لا تقلق من الاسم، هو نظام مجاني ومستقر تعمل عليه أغلب المواقع.</small></li>
+   <li><b>فعّل النسخ الاحتياطي التلقائي</b> (Auto Backup) ليحفظ الخادم نسخة من بياناتك.</li>
+   <li><b>اختر مدة الاشتراك.</b><small>السعر المخفّض يسري لأول 24 شهراً، ثم يعود للسعر العادي.</small></li>
+   <li><b>أنشئ حساباً</b> باسم الدكتور عمر وبريده الشخصي وكلمة سر قوية، ليكون الحساب ملكه.</li>
+   <li><b>ادفع</b> بالبطاقة البنكية أو PayPal.<small>قد تطلب Contabo أحياناً تأكيد الهوية قبل تفعيل الخادم.</small></li>
+   <li><b>انتظر رسالة التفعيل على البريد:</b> فيها «عنوان الخادم» (IP) وبيانات الدخول، وقد تصل خلال دقائق أو ساعات.</li>
+   <li><b>أرسل العنوان وكلمة السر للمهندس بشكل خاص</b> (وليس في مجموعة عامة)، وسيغيّر كلمة السر فوراً ويكمل التجهيز.</li>
+  </ol>
+  <div class="tip">💡 احتفظ بفاتورة الدفع ورسالة التفعيل، وتأكد أن الحساب باسم الدكتور عمر.</div>
+ </details>
  <p class="note">* الأسعار تقريبية وقابلة للتغيير، وتم التحقق منها بتاريخ إعداد التقرير.</p>
 </section>
 
 <section class="t">
- <h2><span class="n">5</span>كم طالباً تتحمل المنصة؟</h2>
+ <h2><span class="n">5</span>اسم الموقع (الدومين)</h2>
+ <div class="card"><p>الدومين هو «عنوان محلك» على الإنترنت، مثل <span class="tag">omarmedhat.com</span>. نوصي بالحجز من <b>Namecheap</b>: سعر السنة الأولى لـ .com بين <b>7 و11 دولار</b> تقريباً (حسب العروض)، والتجديد السنوي لاحقاً أعلى، حوالي <b>15 – 19 دولار</b>. يشمل إخفاء بياناتك الشخصية مجاناً وإدارة العنوان بسهولة.</p>
+  <p class="note">يُسجَّل الدومين باسم الدكتور عمر وعلى حسابه الشخصي، حتى تبقى الملكية له وحده.</p>
+  <a class="btn p" style="max-width:300px;margin-top:10px" href="https://www.namecheap.com/domains/" target="_blank" rel="noopener">🔗 البحث عن الدومين في Namecheap</a></div>
+ <details class="how">
+  <summary>📋 خطوات حجز الدومين من Namecheap (خطوة بخطوة)</summary>
+  <ol class="hs">
+   <li><b>افتح Namecheap</b> من الزر الأخضر أعلاه، واكتب الاسم الذي تريده في خانة البحث (مثل omarmedhat).</li>
+   <li><b>اختر الامتداد .com</b> إذا ظهر أنه متاح، ثم اضغط <b>Add to cart</b>.</li>
+   <li><b>اضغط Checkout</b> واختر المدة <b>سنة واحدة</b>.</li>
+   <li><b>تأكد أن «حماية الخصوصية»</b> (Domain Privacy) مفعّلة، فهي مجانية وتخفي بياناتك الشخصية.</li>
+   <li><b>فعّل التجديد التلقائي</b> (Auto-Renew) حتى لا ينتهي الدومين ويتوقف الموقع بالخطأ.</li>
+   <li><b>لا تشترِ الإضافات</b> التي تعرضها Namecheap (استضافة، بريد…)، فالخادم يغطي ذلك.</li>
+   <li><b>أنشئ حساباً</b> ببريد الدكتور عمر وكلمة سر قوية، وفعّل <b>التحقق بخطوتين</b> لحمايته.</li>
+   <li><b>ادفع</b> بالبطاقة البنكية أو PayPal.</li>
+   <li><b>افتح رسالة التحقق</b> التي تصل على البريد واضغط على رابط التأكيد.<small>مهم: إن لم تؤكد خلال المهلة قد يُوقف الدومين مؤقتاً.</small></li>
+   <li><b>أخبر المهندس بعد إتمام الشراء</b>، و ارسل له البريد الإلكتروني و كلمة المرور، هو سيربط الدومين بالخادم بنفسه، ولا تحتاج لفعل شيء تقني.</li>
+  </ol>
+  <div class="tip">💡 سجّل الدومين دائماً من حساب الدكتور عمر، حتى تبقى الملكية له وحده.</div>
+ </details>
+</section>
+
+<section class="t">
+ <h2><span class="n">6</span>كم طالباً تتحمل المنصة؟</h2>
  <p class="lead">تقدير مبدئي على باقة Contabo Cloud VPS 6. العامل الأهم ليس الذاكرة بل <b>سرعة الإنترنت</b> أثناء مشاهدة الفيديو.</p>
  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr))">
   <div class="card"><div class="ic">🗂️</div><div class="big">50,000+</div><h3>حساب مسجّل</h3><p>لا يوجد حد عملي، فبيانات الحسابات صغيرة جداً على قاعدة البيانات.</p></div>
@@ -210,15 +258,11 @@ footer .ph{background:rgba(255,255,255,.14);padding:0 8px;border-radius:6px;dire
   <div class="bar"><b>1080p</b><i style="width:50px"></i><em>~50 طالب</em></div>
  </div>
  <div class="term"><b>كيف حسبنا ذلك؟</b> سرعة المنفذ 300 ميجابت/ث، نعتمد منها نحو 70% للاستخدام الآمن (~210 ميجابت/ث). مشاهدة فيديو 720p تستهلك حوالي 2 ميجابت/ث لكل طالب (وأكثر إذا كان الفيديو مضغوطاً بجودة أعلى)، فيكون الناتج بين 50 و100 طالب معاً.</div>
+ 
+ 
  <p class="note">* هذه أرقام تقديرية مبنية على افتراضات الجودة وسلوك الطلاب، وليست قياساً فعلياً. سنقيس الأداء الحقيقي بعد التشغيل، ويمكن رفع السعة بضغط الفيديوهات بجودة أقل أو بالترقية عند الحاجة. جلسات الاختبارات المحددة بوقت قد ترفع عدد المتصلين معاً.</p>
 </section>
 
-<section class="t">
- <h2><span class="n">6</span>اسم الموقع (الدومين)</h2>
- <div class="card"><p>الدومين هو «عنوان محلك» على الإنترنت، مثل <span class="tag">omarmedhat.com</span>. نوصي بالحجز من <b>Namecheap</b>: سعر السنة الأولى لـ .com بين <b>7 و11 دولار</b> تقريباً (حسب العروض)، والتجديد السنوي لاحقاً أعلى، حوالي <b>15 – 19 دولار</b>. يشمل إخفاء بياناتك الشخصية مجاناً وإدارة العنوان بسهولة.</p>
-  <p class="note">يُسجَّل الدومين باسم الدكتور عمر وعلى حسابه الشخصي، حتى تبقى الملكية له وحده.</p>
-  <a class="btn p" style="max-width:300px;margin-top:10px" href="https://www.namecheap.com/domains/" target="_blank" rel="noopener">🔗 البحث عن الدومين في Namecheap</a></div>
-</section>
 
 <section class="t">
  <h2><span class="n">7</span>التكلفة</h2>
@@ -256,7 +300,7 @@ footer .ph{background:rgba(255,255,255,.14);padding:0 8px;border-radius:6px;dire
   <div class="card"><div class="ic">📦</div><h3>امتلاء المساحة</h3><p>وصول التخزين لحوالي 80%.</p></div>
   <div class="card"><div class="ic">👥</div><h3>زيادة الطلاب</h3><p>انقطاع الاتصال عند دخول أعداد كبيرة معاً.</p></div>
  </div>
- <p class="note">الحل: الانsتقال إلى باقة أعلى لدى Contabo، أو نقل ملفات الفيديو إلى خدمة تخزين وتوزيع مخصصة للفيديو عند وصول عدد الطلاب لأرقام كبيرة.</p>
+ <p class="note">الحل: الانتقال إلى باقة أعلى لدى Contabo، أو نقل ملفات الفيديو إلى خدمة تخزين وتوزيع مخصصة للفيديو عند وصول عدد الطلاب لأرقام كبيرة.</p>
 </section>
 
 <!-- <section class="t">
